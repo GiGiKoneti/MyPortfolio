@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+/* ── Base ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f9f9f9;
+  }
+
+  html.dark {
+    background-color: #020617;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply text-on-surface dark:text-slate-300;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: color 0.3s ease;
+    background-color: transparent !important;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-on-surface;
+  }
+  
+  .dark ::selection {
+    @apply bg-sky-400/30 text-white;
+  }
+
+  /* Newsreader for headlines */
+  h1, h2, h3 {
+    font-family: 'Newsreader', serif;
+  }
+}
+
+/* ── Material Symbols ── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.fill-icon {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ── Transitions ── */
+@layer utilities {
+  .transition-default {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+/* ── Nav active link ── */
+.nav-link {
+  @apply text-slate-500 dark:text-slate-400 hover:text-sky-400 dark:hover:text-sky-400 transition-colors font-label-sm text-label-sm uppercase tracking-wider;
+}
+
+.nav-link-active {
+  @apply text-sky-400 border-b-2 border-sky-100 dark:border-sky-900 pb-1 font-label-sm text-label-sm uppercase tracking-wider;
+}
+
+/* ── Mobile Menu ── */
+.mobile-menu {
+  @apply fixed inset-0 bg-white dark:bg-slate-950 z-[100] flex flex-col items-center justify-center gap-8 transform translate-x-full transition-transform duration-300 ease-in-out;
+}
+
+.mobile-menu.open {
+  @apply translate-x-0;
+}
+
+.mobile-menu .nav-link,
+.mobile-menu .nav-link-active {
+  @apply text-lg;
+}
+
+/* ── Page Transitions ── */
+main {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Card hover lift ── */
+.card-hover {
+  @apply border border-outline-variant hover:border-primary transition-colors duration-300;
+}
+
+.glass-card {
+  @apply bg-white/80 dark:bg-slate-900/60 backdrop-blur-md border border-outline-variant/30 dark:border-slate-800/50 shadow-sm;
+}
+
+/* ── Line clamp for excerpts ── */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Blog prose ── */
+.prose-article p {
+  @apply font-body-md text-body-md text-on-surface dark:text-slate-300 mb-6;
+}
+
+.prose-article h2 {
+  @apply font-headline-lg text-headline-lg text-on-surface dark:text-white mt-12 mb-4;
+}
+
+.prose-article ul {
+  @apply list-disc pl-6 mb-6 flex flex-col gap-2 font-body-md text-body-md text-on-surface dark:text-slate-300;
+}
+
+.prose-article blockquote {
+  @apply border-l-2 border-primary dark:border-sky-500 pl-6 my-8 py-2;
+}
+
+.prose-article blockquote p {
+  @apply font-headline-md text-headline-md text-on-surface-variant dark:text-slate-400 italic mb-0;
+}
+
+.prose-article pre {
+  @apply bg-surface-container dark:bg-slate-900 rounded-lg p-6 my-6 border border-outline-variant/50 dark:border-slate-800/50 overflow-x-auto;
+}
+
+.prose-article code {
+  @apply font-mono text-sm text-on-surface dark:text-slate-200;
+}
+
+/* ── Utilities ── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* ── Timeline Enhancements ── */
+.milestone-card {
+  @apply transition-all duration-300 border border-outline-variant/30;
+}
+
+.milestone-card:hover, .milestone-item.selected .milestone-card {
+  @apply border-primary/50 dark:border-sky-400/50 shadow-[0_0_20px_rgba(14,165,233,0.15)] dark:shadow-[0_0_20px_rgba(56,189,248,0.2)];
+  transform: translateY(-8px);
+}
+
+.milestone-item.selected .rounded-full {
+  @apply bg-primary dark:bg-sky-400 scale-125;
+}
+
+/* ── Milestone Date Pops ── */
+.milestone-date {
+  @apply opacity-40 scale-90 origin-bottom;
+}
+
+.milestone-item.selected .milestone-date {
+  @apply opacity-100 scale-110 text-primary dark:text-sky-400 font-bold;
+}

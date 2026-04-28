@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - GiGi Koneti</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#cee6f5",
+                        "tertiary-container": "#d5d5d5",
+                        "on-secondary-fixed-variant": "#334a56",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#72787c",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#b8daf0",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface-dim": "#dadada",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-fixed": "#c5e7fe",
+                        "on-primary-fixed": "#001e2c",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#426275",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary-fixed": "#051e29",
+                        "primary-fixed-dim": "#a9cbe1",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-fixed": "#cee6f5",
+                        "secondary": "#4b616e",
+                        "on-primary-container": "#3f6073",
+                        "on-surface-variant": "#42474c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "outline-variant": "#c2c7cc",
+                        "on-surface": "#1a1c1c",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#b2cad8",
+                        "primary": "#426275",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#5c5c5c",
+                        "tertiary-fixed": "#e2e2e2",
+                        "inverse-primary": "#a9cbe1",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed-variant": "#294b5d",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "surface-container-low": "#f3f3f4",
+                        "tertiary": "#5e5e5e",
+                        "on-secondary-container": "#516774",
+                        "on-background": "#1a1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "2rem",
+                        "section-gap": "5rem",
+                        "margin-page": "5vw",
+                        "stack-gap": "1.5rem",
+                        "container-max": "1100px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Newsreader"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Newsreader"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Newsreader"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-white dark:bg-slate-950 full-width top-0 z-50 border-b border-slate-100 dark:border-slate-900 flat no shadows sticky">
+<div class="max-w-[1100px] mx-auto flex justify-between items-center px-6 py-8 w-full">
+<a class="text-xl font-medium tracking-tight text-slate-900 dark:text-slate-50 font-serif Newsreader" href="#">
+                GiGi Koneti
+            </a>
+<div class="hidden md:flex items-center space-x-8 font-serif Newsreader text-slate-900 dark:text-slate-100">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-400 dark:hover:text-sky-300 transition-colors hover:opacity-80 transition-opacity scale-100 active:scale-95 transition-transform" href="#">Home</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-400 dark:hover:text-sky-300 transition-colors hover:opacity-80 transition-opacity scale-100 active:scale-95 transition-transform" href="#">Research</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-400 dark:hover:text-sky-300 transition-colors hover:opacity-80 transition-opacity scale-100 active:scale-95 transition-transform" href="#">Projects</a>
+<a aria-current="page" class="text-sky-400 dark:text-sky-300 border-b-2 border-sky-100 dark:border-sky-900 pb-1 hover:opacity-80 transition-opacity scale-100 active:scale-95 transition-transform" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-sky-300 dark:text-sky-200 font-serif Newsreader hover:opacity-80 transition-opacity scale-100 active:scale-95 transition-transform" href="#">
+                    CV
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="max-w-container-max mx-auto px-margin-page py-section-gap flex flex-col gap-section-gap">
+<!-- Header Section -->
+<header class="max-w-3xl flex flex-col gap-stack-gap">
+<h1 class="font-headline-xl text-headline-xl text-on-surface">Get in Touch</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                I am currently open to new research collaborations, speaking engagements, and academic discussions. Please feel free to reach out via email or connect with me on professional networks.
+            </p>
+</header>
+<!-- Contact Methods Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Email Card -->
+<a class="group flex flex-col items-start gap-4 p-8 bg-surface-container-lowest border border-outline-variant hover:border-primary transition-colors h-full no-underline" href="mailto:gigikoneti@gmail.com">
+<div class="w-12 h-12 rounded-DEFAULT bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Email</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 group-hover:text-primary transition-colors">gigikoneti@gmail.com</p>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider flex items-center gap-2">
+                        Send a message <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</a>
+<!-- GitHub Card -->
+<a class="group flex flex-col items-start gap-4 p-8 bg-surface-container-lowest border border-outline-variant hover:border-primary transition-colors h-full no-underline" href="https://github.com/GiGiKoneti" rel="noopener noreferrer" target="_blank">
+<div class="w-12 h-12 rounded-DEFAULT bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">code</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">GitHub</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 group-hover:text-primary transition-colors">github.com/GiGiKoneti</p>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider flex items-center gap-2">
+                        View repositories <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</a>
+<!-- YouTube Card -->
+<a class="group flex flex-col items-start gap-4 p-8 bg-surface-container-lowest border border-outline-variant hover:border-primary transition-colors h-full no-underline" href="#" rel="noopener noreferrer" target="_blank">
+<div class="w-12 h-12 rounded-DEFAULT bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">play_circle</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Podcast</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 group-hover:text-primary transition-colors">Research discussions &amp; interviews</p>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider flex items-center gap-2">
+                        Watch on YouTube <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</a>
+</section>
+<!-- Decorative Image Section -->
+<section class="w-full relative h-[400px] overflow-hidden rounded-DEFAULT border border-outline-variant">
+<img alt="Minimalist desk setup with natural lighting, showing a notebook, pen, and a cup of coffee on a wooden surface, academic aesthetic." class="w-full h-full object-cover object-center opacity-90" data-alt="Minimalist desk setup with natural lighting, showing a notebook, pen, and a cup of coffee on a wooden surface, academic aesthetic." src="https://www.andrewng.org/contact"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 to-transparent flex items-end p-8">
+<p class="font-headline-lg text-headline-lg text-surface-container-lowest max-w-xl">
+                    "The most profound technologies are those that disappear. They weave themselves into the fabric of everyday life until they are indistinguishable from it."
+                </p>
+</div>
+</section>
+<!-- Connect Links List (Alternative format) -->
+<section class="max-w-2xl flex flex-col gap-stack-gap border-t border-outline-variant pt-section-gap">
+<h3 class="font-headline-md text-headline-md text-on-surface">Professional Networks</h3>
+<ul class="flex flex-col gap-4">
+<li>
+<a class="flex items-center justify-between py-4 border-b border-outline-variant hover:border-primary group transition-colors no-underline" href="#">
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors">LinkedIn</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-4 border-b border-outline-variant hover:border-primary group transition-colors no-underline" href="#">
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors">Google Scholar</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-4 border-b border-outline-variant hover:border-primary group transition-colors no-underline" href="#">
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors">ResearchGate</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</a>
+</li>
+</ul>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-950 full-width border-t border-slate-100 dark:border-slate-900 flat no shadows mt-section-gap">
+<div class="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-12 gap-4">
+<p class="font-serif Newsreader text-slate-600 dark:text-slate-400 text-sm text-sky-300 dark:text-sky-200 opacity-100 hover:opacity-70 transition-opacity">
+                © 2024 GiGi Koneti. Academic Portfolio.
+            </p>
+<div class="flex items-center gap-6 font-serif Newsreader text-sm">
+<a class="text-slate-400 dark:text-slate-500 hover:text-sky-400 dark:hover:text-sky-300 transition-colors opacity-100 hover:opacity-70 transition-opacity" href="#">GitHub</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-sky-400 dark:hover:text-sky-300 transition-colors opacity-100 hover:opacity-70 transition-opacity" href="#">LinkedIn</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-sky-400 dark:hover:text-sky-300 transition-colors opacity-100 hover:opacity-70 transition-opacity" href="#">YouTube</a>
+</div>
+</div>
+</footer>
+</body></html>

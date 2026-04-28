@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GiGi Kernel Podcast - GiGi Koneti</title>
+  <meta name="description" content="GiGi Kernel — Deep-dive research interviews on SOTA AI, NLP, and spatiotemporal modeling." />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body data-page="podcast" class="antialiased min-h-screen flex flex-col">
+  <div id="site-nav"></div>
+  <main class="flex-grow flex flex-col gap-12 pt-6 pb-section-gap w-full max-w-[1100px] mx-auto px-[5vw]">
+    <!-- Header -->
+    <header class="flex flex-col items-center text-center mt-0 mb-0">
+      <!-- Banner -->
+      <div class="w-full aspect-[21/9] md:aspect-[3/1] bg-slate-200 dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm relative">
+        <img src="/podcast-banner.png" alt="Podcast Banner" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- Logo -->
+      <div class="w-28 h-28 bg-black dark:bg-white rounded-2xl flex items-center justify-center border-4 border-[#f9f9f9] dark:border-[#020617] overflow-hidden -mt-14 relative z-10 shadow-md">
+        <img alt="GiGi Kernel podcast logo" class="w-full h-full object-cover dark:hidden" src="/dark_cropped.png" />
+        <img alt="GiGi Kernel podcast logo" class="w-full h-full object-cover hidden dark:block" src="/light_cropped.png" />
+      </div>
+      
+      <h1 class="font-headline-xl text-headline-xl text-on-surface dark:text-white mt-6 mb-3">GiGi Kernel</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-slate-400 max-w-2xl mx-auto">Deep-dive research interviews on SOTA AI, NLP, and spatiotemporal modeling.</p>
+    </header>
+
+    <!-- Recent Episodes -->
+    <section class="flex flex-col gap-stack-gap w-full">
+      <div class="flex justify-between items-end border-b border-outline-variant dark:border-slate-800 pb-4 mb-4">
+        <h2 class="font-headline-lg text-headline-lg text-on-surface dark:text-white">Recent Episodes</h2>
+        <a class="font-label-sm text-label-sm text-primary dark:text-sky-400 hover:text-primary-fixed-dim transition-colors flex items-center gap-1" href="#">Join Discord</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+        <!-- Ep 1 -->
+        <article class="glass-card border border-outline-variant dark:border-slate-700 rounded-xl overflow-hidden flex flex-col hover:border-primary transition-all shadow-sm hover:shadow-md h-full group">
+          <div class="w-full aspect-video bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
+            <img src="/podcast-ep1.png" alt="AI & Math Research Podcast" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-grow">
+            <header class="flex flex-col gap-2">
+              <span class="font-label-sm text-label-sm text-on-surface-variant dark:text-slate-500 uppercase tracking-wider">Episode 42</span>
+              <h3 class="font-headline-md text-2xl text-on-surface dark:text-white leading-snug">AI & Math Research: Unlocking New Concepts</h3>
+            </header>
+            <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400 flex-grow line-clamp-3">
+              A deep dive into the intersection of artificial intelligence and advanced mathematics, exploring how abstract algebraic and topological concepts are being utilized to build more robust models.
+            </p>
+            <footer class="mt-auto pt-2">
+              <a href="#" class="inline-flex items-center gap-2 bg-primary-container text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors dark:bg-sky-400/20 dark:text-sky-300 dark:hover:bg-sky-400/30 px-5 py-2.5 rounded text-sm font-medium w-fit">
+                <span class="material-symbols-outlined text-[20px]">play_circle</span>
+                Watch on YouTube
+              </a>
+            </footer>
+          </div>
+        </article>
+
+        <!-- Ep 2 -->
+        <article class="glass-card border border-outline-variant dark:border-slate-700 rounded-xl overflow-hidden flex flex-col hover:border-primary transition-all shadow-sm hover:shadow-md h-full group">
+          <div class="w-full aspect-video bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
+            <img src="/podcast-ep2.png" alt="Quantum Physics & Cosmology" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-grow">
+            <header class="flex flex-col gap-2">
+              <span class="font-label-sm text-label-sm text-on-surface-variant dark:text-slate-500 uppercase tracking-wider">Episode 41</span>
+              <h3 class="font-headline-md text-2xl text-on-surface dark:text-white leading-snug">Quantum Physics & Cosmology: Exploring the Universe's Secrets</h3>
+            </header>
+            <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400 flex-grow line-clamp-3">
+              An exploration into the deepest mysteries of our universe. We discuss the intersection of quantum physics and cosmology, examining how quantum phenomena scale to cosmological structures.
+            </p>
+            <footer class="mt-auto pt-2">
+              <a href="#" class="inline-flex items-center gap-2 bg-primary-container text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors dark:bg-sky-400/20 dark:text-sky-300 dark:hover:bg-sky-400/30 px-5 py-2.5 rounded text-sm font-medium w-fit">
+                <span class="material-symbols-outlined text-[20px]">play_circle</span>
+                Watch on YouTube
+              </a>
+            </footer>
+          </div>
+        </article>
+
+        <!-- Ep 3 -->
+        <article class="glass-card border border-outline-variant dark:border-slate-700 rounded-xl overflow-hidden flex flex-col hover:border-primary transition-all shadow-sm hover:shadow-md h-full group">
+          <div class="w-full aspect-video bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
+            <img src="/podcast-ep3.png" alt="Quantum Computing Explained" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-grow">
+            <header class="flex flex-col gap-2">
+              <span class="font-label-sm text-label-sm text-on-surface-variant dark:text-slate-500 uppercase tracking-wider">Episode 40</span>
+              <h3 class="font-headline-md text-2xl text-on-surface dark:text-white leading-snug">Quantum Computing Explained: Cracking the Code of Reality</h3>
+            </header>
+            <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400 flex-grow line-clamp-3">
+              Breaking down the complex world of quantum computing. We discuss the mechanics of qubits, quantum supremacy, and how this emerging technology could reshape computational complexity.
+            </p>
+            <footer class="mt-auto pt-2">
+              <a href="#" class="inline-flex items-center gap-2 bg-primary-container text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors dark:bg-sky-400/20 dark:text-sky-300 dark:hover:bg-sky-400/30 px-5 py-2.5 rounded text-sm font-medium w-fit">
+                <span class="material-symbols-outlined text-[20px]">play_circle</span>
+                Watch on YouTube
+              </a>
+            </footer>
+          </div>
+        </article>
+
+        <!-- Ep 4 -->
+        <article class="glass-card border border-outline-variant dark:border-slate-700 rounded-xl overflow-hidden flex flex-col hover:border-primary transition-all shadow-sm hover:shadow-md h-full group">
+          <div class="w-full aspect-video bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
+            <img src="/podcast-ep4.png" alt="Space Exploration Podcast" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-4 flex-grow">
+            <header class="flex flex-col gap-2">
+              <span class="font-label-sm text-label-sm text-on-surface-variant dark:text-slate-500 uppercase tracking-wider">Episode 39</span>
+              <h3 class="font-headline-md text-2xl text-on-surface dark:text-white leading-snug">Space Exploration: Beyond Our Solar System</h3>
+            </header>
+            <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400 flex-grow line-clamp-3">
+              What lies beyond our solar system? We discuss the future of deep space exploration, novel propulsion systems, and the continuing search for exoplanets and extraterrestrial life.
+            </p>
+            <footer class="mt-auto pt-2">
+              <a href="#" class="inline-flex items-center gap-2 bg-primary-container text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors dark:bg-sky-400/20 dark:text-sky-300 dark:hover:bg-sky-400/30 px-5 py-2.5 rounded text-sm font-medium w-fit">
+                <span class="material-symbols-outlined text-[20px]">play_circle</span>
+                Watch on YouTube
+              </a>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Guest Booking -->
+    <section class="w-full max-w-3xl mx-auto glass-card-low dark:bg-slate-800 border border-outline-variant dark:border-slate-700 p-[3rem] md:p-[4rem] rounded mt-12 mb-12" id="guest-booking">
+      <header class="mb-8 text-center">
+        <h2 class="font-headline-lg text-headline-lg text-on-surface dark:text-white mb-2">Be my next Guest</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400">Submit your research or propose a topic for an upcoming episode.</p>
+      </header>
+      <form class="flex flex-col gap-stack-gap">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex flex-col gap-2">
+            <label class="font-label-sm text-label-sm text-on-surface-variant dark:text-slate-500 uppercase" for="guest-name">Full Name</label>
+            <input class="border-0 border-b border-outline-variant dark:border-slate-700 bg-transparent py-2 px-0 focus:ring-0 focus:border-primary dark:focus:border-sky-400 font-body-md text-body-md text-on-surface dark:text-white transition-colors rounded-none" id="guest-name" type="text" />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="font-label-sm text-label-sm text-on-surface-variant dark:text-slate-500 uppercase" for="guest-affiliation">Affiliation / Institution</label>
+            <input class="border-0 border-b border-outline-variant dark:border-slate-700 bg-transparent py-2 px-0 focus:ring-0 focus:border-primary dark:focus:border-sky-400 font-body-md text-body-md text-on-surface dark:text-white transition-colors rounded-none" id="guest-affiliation" type="text" />
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <label class="font-label-sm text-label-sm text-on-surface-variant dark:text-slate-500 uppercase" for="guest-topic">Research Topic / Paper Title</label>
+          <input class="border-0 border-b border-outline-variant dark:border-slate-700 bg-transparent py-2 px-0 focus:ring-0 focus:border-primary dark:focus:border-sky-400 font-body-md text-body-md text-on-surface dark:text-white transition-colors rounded-none" id="guest-topic" type="text" />
+        </div>
+        <div class="flex flex-col gap-2">
+          <label class="font-label-sm text-label-sm text-on-surface-variant dark:text-slate-500 uppercase" for="guest-message">Abstract / Brief Summary</label>
+          <textarea class="border-0 border-b border-outline-variant dark:border-slate-700 bg-transparent py-2 px-0 focus:ring-0 focus:border-primary dark:focus:border-sky-400 font-body-md text-body-md text-on-surface dark:text-white transition-colors rounded-none resize-none" id="guest-message" rows="4"></textarea>
+        </div>
+        <div class="mt-4 flex justify-end">
+          <button class="bg-primary dark:bg-sky-900/60 text-on-primary dark:text-white px-8 py-3 font-label-sm text-label-sm rounded uppercase tracking-wider hover:bg-primary-container dark:hover:bg-sky-500 transition-colors" type="submit">Submit Proposal</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>
