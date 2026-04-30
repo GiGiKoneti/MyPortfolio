@@ -105,6 +105,115 @@ main {
 
 .glass-card {
   @apply bg-white/80 dark:bg-slate-900/60 backdrop-blur-md border border-outline-variant/30 dark:border-slate-800/50 shadow-sm;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(170, 210, 245, 0.18) 0px,
+      rgba(170, 210, 245, 0.18) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(180, 215, 248, 0.12) 0px,
+      rgba(180, 215, 248, 0.12) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    radial-gradient(ellipse at 25% 20%, rgba(186, 220, 248, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse at 75% 80%, rgba(196, 226, 252, 0.15) 0%, transparent 60%);
+}
+
+.dark .glass-card::before {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(56, 189, 248, 0.07) 0px,
+      rgba(56, 189, 248, 0.07) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(99, 165, 230, 0.05) 0px,
+      rgba(99, 165, 230, 0.05) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    radial-gradient(ellipse at 25% 20%, rgba(56, 189, 248, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 75% 80%, rgba(99, 165, 230, 0.04) 0%, transparent 60%);
+}
+
+/* Ensure card content sits above the texture */
+.glass-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Glass-card-low variant */
+.glass-card-low {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card-low::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(170, 210, 245, 0.14) 0px,
+      rgba(170, 210, 245, 0.14) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(180, 215, 248, 0.09) 0px,
+      rgba(180, 215, 248, 0.09) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    radial-gradient(ellipse at 30% 25%, rgba(186, 220, 248, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 75%, rgba(200, 228, 252, 0.12) 0%, transparent 60%);
+}
+
+.dark .glass-card-low::before {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(56, 189, 248, 0.06) 0px,
+      rgba(56, 189, 248, 0.06) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(99, 165, 230, 0.04) 0px,
+      rgba(99, 165, 230, 0.04) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    radial-gradient(ellipse at 30% 25%, rgba(56, 189, 248, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 75%, rgba(99, 165, 230, 0.03) 0%, transparent 60%);
+}
+
+.glass-card-low > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── Line clamp for excerpts ── */
@@ -156,6 +265,58 @@ main {
 /* ── Timeline Enhancements ── */
 .milestone-card {
   @apply transition-all duration-300 border border-outline-variant/30;
+  position: relative;
+  overflow: hidden;
+}
+
+.milestone-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(170, 210, 245, 0.16) 0px,
+      rgba(170, 210, 245, 0.16) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(180, 215, 248, 0.1) 0px,
+      rgba(180, 215, 248, 0.1) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    radial-gradient(ellipse at 25% 20%, rgba(186, 220, 248, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 75% 80%, rgba(196, 226, 252, 0.13) 0%, transparent 60%);
+}
+
+.dark .milestone-card::before {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(56, 189, 248, 0.06) 0px,
+      rgba(56, 189, 248, 0.06) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(99, 165, 230, 0.04) 0px,
+      rgba(99, 165, 230, 0.04) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    radial-gradient(ellipse at 25% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 75% 80%, rgba(99, 165, 230, 0.03) 0%, transparent 60%);
+}
+
+.milestone-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .milestone-card:hover, .milestone-item.selected .milestone-card {

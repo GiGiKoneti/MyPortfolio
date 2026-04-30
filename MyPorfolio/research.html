@@ -10,9 +10,9 @@
 </head>
 <body data-page="research" class="antialiased min-h-screen flex flex-col">
   <div id="site-nav"></div>
-  <main class="flex-grow w-full max-w-[1100px] mx-auto px-6 py-16">
-    <header class="mb-section-gap">
-      <h1 class="font-headline-xl text-headline-xl mb-6 text-on-surface dark:text-white">Research</h1>
+  <main class="flex-grow w-full max-w-[1100px] mx-auto px-6 py-6">
+    <header class="mb-4">
+      <h1 class="font-headline-xl text-headline-xl mb-2 text-on-surface dark:text-white">Research</h1>
       <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-slate-400 max-w-3xl leading-relaxed">
         Exploring the intersections of language, reasoning, and multi-modal understanding to build more capable and adaptable artificial intelligence systems.
       </p>
@@ -20,34 +20,257 @@
 
     <!-- Research Interests -->
     <section class="mb-section-gap">
-      <h2 class="font-headline-lg text-headline-lg mb-8 text-on-surface dark:text-white border-b border-surface-variant dark:border-slate-800 pb-4">Research Interests</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="border border-surface-variant dark:border-slate-700 p-8 rounded hover:border-primary-container transition-colors glass-card dark:bg-slate-900">
-          <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white mb-3">Natural Language Processing</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400">Developing robust models for understanding and generating human language across diverse domains.</p>
-        </div>
-        <div class="border border-surface-variant dark:border-slate-700 p-8 rounded hover:border-primary-container transition-colors glass-card dark:bg-slate-900">
-          <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white mb-3">Multilingual &amp; Low-Resource</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400">Extending the capabilities of language models to support underrepresented and complex linguistic structures.</p>
-        </div>
-        <div class="border border-surface-variant dark:border-slate-700 p-8 rounded hover:border-primary-container transition-colors glass-card dark:bg-slate-900">
-          <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white mb-3">Probabilistic Generative Models</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400">Investigating foundational architectures for controlled and interpretable generation of data modalities.</p>
-        </div>
-        <div class="border border-surface-variant dark:border-slate-700 p-8 rounded hover:border-primary-container transition-colors glass-card dark:bg-slate-900">
-          <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white mb-3">Multi-Modal Representation</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400">Learning aligned semantic spaces bridging text, vision, and structured data environments.</p>
-        </div>
-        <div class="border border-surface-variant dark:border-slate-700 p-8 rounded hover:border-primary-container transition-colors glass-card dark:bg-slate-900">
-          <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white mb-3">Neural-Symbolic Reasoning</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400">Integrating discrete logical reasoning capabilities within continuous deep learning frameworks.</p>
-        </div>
-        <div class="border border-surface-variant dark:border-slate-700 p-8 rounded hover:border-primary-container transition-colors glass-card dark:bg-slate-900">
-          <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white mb-3">Spatiotemporal AI</h3>
-          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400">Modeling complex dynamic systems that evolve over time and physical space.</p>
-        </div>
+      <h2 class="font-headline-lg text-headline-lg mb-4 text-on-surface dark:text-white border-b border-surface-variant dark:border-slate-800 pb-3">Research Interests</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="research-grid">
+
+        <!-- Card 1 -->
+        <button type="button" data-research="0" class="research-card border border-surface-variant dark:border-slate-700 p-5 rounded hover:border-primary dark:hover:border-sky-400 transition-all glass-card dark:bg-slate-900 text-left cursor-pointer group hover:shadow-lg hover:-translate-y-0.5 duration-300">
+          <div class="flex items-center gap-2.5 mb-2">
+            <span class="material-symbols-outlined text-primary dark:text-sky-400 text-[28px] group-hover:scale-110 transition-transform">blur_on</span>
+            <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white leading-tight">Diffusion-Based Generative Systems</h3>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400 mb-2 text-sm">Investigating continuous-time diffusion processes, score matching, and controllable generation across modalities.</p>
+          <span class="inline-flex items-center gap-1 text-primary dark:text-sky-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Explore subtopics <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+        </button>
+
+        <!-- Card 2 -->
+        <button type="button" data-research="1" class="research-card border border-surface-variant dark:border-slate-700 p-5 rounded hover:border-primary dark:hover:border-sky-400 transition-all glass-card dark:bg-slate-900 text-left cursor-pointer group hover:shadow-lg hover:-translate-y-0.5 duration-300">
+          <div class="flex items-center gap-2.5 mb-2">
+            <span class="material-symbols-outlined text-primary dark:text-sky-400 text-[28px] group-hover:scale-110 transition-transform">account_tree</span>
+            <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white leading-tight">Recursive Neural Architectures</h3>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400 mb-2 text-sm">State space models, hybrid transformer-RNN designs, and memory-augmented recursive systems for long-context modeling.</p>
+          <span class="inline-flex items-center gap-1 text-primary dark:text-sky-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Explore subtopics <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+        </button>
+
+        <!-- Card 3 -->
+        <button type="button" data-research="2" class="research-card border border-surface-variant dark:border-slate-700 p-5 rounded hover:border-primary dark:hover:border-sky-400 transition-all glass-card dark:bg-slate-900 text-left cursor-pointer group hover:shadow-lg hover:-translate-y-0.5 duration-300">
+          <div class="flex items-center gap-2.5 mb-2">
+            <span class="material-symbols-outlined text-primary dark:text-sky-400 text-[28px] group-hover:scale-110 transition-transform">psychology</span>
+            <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white leading-tight">Reasoning Capabilities in Small Language Models</h3>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400 mb-2 text-sm">Knowledge distillation, chain-of-thought injection, and enabling compact models with tool use and symbolic reasoning.</p>
+          <span class="inline-flex items-center gap-1 text-primary dark:text-sky-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Explore subtopics <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+        </button>
+
+        <!-- Card 4 -->
+        <button type="button" data-research="3" class="research-card border border-surface-variant dark:border-slate-700 p-5 rounded hover:border-primary dark:hover:border-sky-400 transition-all glass-card dark:bg-slate-900 text-left cursor-pointer group hover:shadow-lg hover:-translate-y-0.5 duration-300">
+          <div class="flex items-center gap-2.5 mb-2">
+            <span class="material-symbols-outlined text-primary dark:text-sky-400 text-[28px] group-hover:scale-110 transition-transform">devices</span>
+            <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white leading-tight">Edge-Optimized Model Compression & Deployment</h3>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400 mb-2 text-sm">Quantization strategies, neural architecture search, structured pruning, and on-device learning for resource-constrained environments.</p>
+          <span class="inline-flex items-center gap-1 text-primary dark:text-sky-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Explore subtopics <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+        </button>
+
+        <!-- Card 5 -->
+        <button type="button" data-research="4" class="research-card border border-surface-variant dark:border-slate-700 p-5 rounded hover:border-primary dark:hover:border-sky-400 transition-all glass-card dark:bg-slate-900 text-left cursor-pointer group hover:shadow-lg hover:-translate-y-0.5 duration-300">
+          <div class="flex items-center gap-2.5 mb-2">
+            <span class="material-symbols-outlined text-primary dark:text-sky-400 text-[28px] group-hover:scale-110 transition-transform">hub</span>
+            <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white leading-tight">Multimodal Latent Space Geometry & Mathematical Foundations</h3>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400 mb-2 text-sm">Manifold learning, algebraic operations on embeddings, topological analysis, and information-theoretic alignment bounds.</p>
+          <span class="inline-flex items-center gap-1 text-primary dark:text-sky-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Explore subtopics <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+        </button>
+
+        <!-- Card 6 -->
+        <button type="button" data-research="5" class="research-card border border-surface-variant dark:border-slate-700 p-5 rounded hover:border-primary dark:hover:border-sky-400 transition-all glass-card dark:bg-slate-900 text-left cursor-pointer group hover:shadow-lg hover:-translate-y-0.5 duration-300">
+          <div class="flex items-center gap-2.5 mb-2">
+            <span class="material-symbols-outlined text-primary dark:text-sky-400 text-[28px] group-hover:scale-110 transition-transform">memory</span>
+            <h3 class="font-headline-md text-headline-md text-on-surface dark:text-white leading-tight">Custom Hardware Architectures for AI Acceleration</h3>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400 mb-2 text-sm">Domain-specific accelerators, neuromorphic computing, photonic AI, and energy-efficient dataflow architectures.</p>
+          <span class="inline-flex items-center gap-1 text-primary dark:text-sky-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Explore subtopics <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+        </button>
+
       </div>
     </section>
+
+    <!-- Research Modal -->
+    <div id="research-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center p-4 sm:p-6">
+      <!-- Backdrop -->
+      <div id="research-modal-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0"></div>
+      <!-- Panel -->
+      <div id="research-modal-panel" class="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl transform transition-all duration-300 scale-95 opacity-0">
+        <!-- Close button -->
+        <button id="research-modal-close" type="button" class="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 transition-colors">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+        <!-- Content injected by JS -->
+        <div id="research-modal-content" class="p-8 sm:p-10"></div>
+      </div>
+    </div>
+
+    <script>
+    (function() {
+      const researchData = [
+        {
+          icon: 'blur_on',
+          title: 'Diffusion-Based Generative Systems',
+          subtitle: 'Denoising Diffusion Models & Applications',
+          subtopics: [
+            { name: 'Score-Based Generative Modeling', desc: 'Investigating continuous-time diffusion processes and score matching techniques for high-fidelity synthesis.' },
+            { name: 'Guided Diffusion & Controllable Generation', desc: 'Classifier-free guidance, conditioning mechanisms, and steerable generation across modalities.' },
+            { name: 'Latent Diffusion Models', desc: 'Efficient diffusion in compressed latent spaces for scalable text-to-image and video synthesis.' },
+            { name: 'Discrete Diffusion for Structured Data', desc: 'Extending diffusion frameworks to graphs, molecules, code, and other discrete domains.' },
+            { name: 'Fast Sampling & Distillation', desc: 'Novel ODE solvers, consistency models, and knowledge distillation for real-time diffusion inference.' }
+          ]
+        },
+        {
+          icon: 'account_tree',
+          title: 'Recursive Neural Architectures',
+          subtitle: 'Autoregressive Language Modeling',
+          subtopics: [
+            { name: 'State Space Models & Structured Recursion', desc: 'Mamba, S4, and linear recurrence mechanisms for efficient long-context modeling.' },
+            { name: 'Hybrid Transformer-RNN Architectures', desc: 'Combining attention mechanisms with recurrent structures for improved efficiency-performance tradeoffs.' },
+            { name: 'Memory-Augmented Recursive Systems', desc: 'Neural Turing Machines, Differentiable Neural Computers, and external memory integration.' },
+            { name: 'Recursive Generation Strategies', desc: 'Chain-of-thought, tree-of-thought, and self-refinement mechanisms in autoregressive models.' },
+            { name: 'Infinite-Context Mechanisms', desc: 'Compression techniques, hierarchical representations, and forgetting mechanisms for unbounded sequences.' }
+          ]
+        },
+        {
+          icon: 'psychology',
+          title: 'Reasoning Capabilities in Small Language Models',
+          subtitle: 'Compact & Efficient Reasoning',
+          subtopics: [
+            { name: 'Knowledge Distillation from Frontier Models', desc: 'Multi-teacher distillation, selective imitation, and capability transfer to compact architectures.' },
+            { name: 'Chain-of-Thought Injection', desc: 'Training compact models on synthetic reasoning traces and intermediate step generation.' },
+            { name: 'Tool Use & Symbolic Integration', desc: 'Enabling SLMs to leverage calculators, code interpreters, and external knowledge bases.' },
+            { name: 'Constitutional AI for Constrained Reasoning', desc: 'Embedding logical rules, constraint satisfaction, and verifiable reasoning paths.' },
+            { name: 'Multimodal Reasoning in Resource-Constrained Settings', desc: 'Visual reasoning, embodied understanding, and cross-modal inference in SLMs.' }
+          ]
+        },
+        {
+          icon: 'devices',
+          title: 'Edge-Optimized Model Compression & Deployment',
+          subtitle: 'On-Device AI Efficiency',
+          subtopics: [
+            { name: 'Post-Training Quantization Strategies', desc: 'Mixed-precision schemes, adaptive bit-width allocation, and quantization-aware fine-tuning.' },
+            { name: 'Neural Architecture Search for Edge Devices', desc: 'Hardware-aware NAS, latency-constrained optimization, and device-specific architecture design.' },
+            { name: 'Structured Pruning & Sparsity', desc: 'Channel pruning, attention head removal, and exploiting hardware-friendly sparse patterns.' },
+            { name: 'Model Partitioning & Collaborative Inference', desc: 'Split computing, edge-cloud collaboration, and federated inference strategies.' },
+            { name: 'On-Device Learning & Adaptation', desc: 'Continual learning, personalization, and efficient fine-tuning within memory/compute constraints.' }
+          ]
+        },
+        {
+          icon: 'hub',
+          title: 'Multimodal Latent Space Geometry & Mathematical Foundations',
+          subtitle: 'Theoretical Underpinnings of Multimodal AI',
+          subtopics: [
+            { name: 'Manifold Learning in Cross-Modal Embeddings', desc: 'Understanding the geometric structure of vision-language and audio-text latent spaces.' },
+            { name: 'Algebraic Operations on Multimodal Representations', desc: 'Vector arithmetic, compositional reasoning, and semantic interpolation.' },
+            { name: 'Disentanglement & Factorized Representations', desc: 'Separating content, style, and modality-specific factors in shared embeddings.' },
+            { name: 'Topological Analysis of Neural Representations', desc: 'Persistent homology, connectivity patterns, and structural invariants in embedding spaces.' },
+            { name: 'Theoretical Bounds on Multimodal Alignment', desc: 'Information-theoretic limits, optimal transport theory, and convergence guarantees.' }
+          ]
+        },
+        {
+          icon: 'memory',
+          title: 'Custom Hardware Architectures for AI Acceleration',
+          subtitle: 'Silicon for Intelligence',
+          subtopics: [
+            { name: 'Domain-Specific Accelerators for Transformers', desc: 'Attention-optimized datapaths, memory hierarchies, and systolic array designs.' },
+            { name: 'Neuromorphic Computing & Spiking Neural Networks', desc: 'Event-driven processing, temporal coding, and brain-inspired architectures.' },
+            { name: 'Photonic & Analog Computing for AI', desc: 'Optical neural networks, in-memory computing, and analog matrix multiplication.' },
+            { name: 'Reconfigurable Hardware for Model Adaptivity', desc: 'FPGA-based deployment, dynamic precision switching, and runtime model morphing.' },
+            { name: 'Energy-Efficient Dataflow Architectures', desc: 'Optimizing data reuse, minimizing memory bandwidth, and reducing communication overhead.' }
+          ]
+        }
+      ];
+
+      const modal = document.getElementById('research-modal');
+      const backdrop = document.getElementById('research-modal-backdrop');
+      const panel = document.getElementById('research-modal-panel');
+      const content = document.getElementById('research-modal-content');
+      const closeBtn = document.getElementById('research-modal-close');
+
+      function openModal(index) {
+        const data = researchData[index];
+        content.innerHTML = `
+          <div class="flex items-center gap-3 mb-2">
+            <span class="material-symbols-outlined text-primary dark:text-sky-400 text-[32px]">${data.icon}</span>
+            <div>
+              <h3 class="font-headline-lg text-xl sm:text-2xl text-on-surface dark:text-white leading-tight">${data.title}</h3>
+              <p class="text-sm text-on-surface-variant dark:text-slate-500 mt-1">${data.subtitle}</p>
+            </div>
+          </div>
+          <div class="w-full h-px bg-slate-200 dark:bg-slate-700 my-6"></div>
+          <ul class="flex flex-col gap-5">
+            ${data.subtopics.map((s, i) => `
+              <li class="flex gap-4 items-start research-subtopic-item" style="animation: subtopicFadeIn 0.35s ease-out ${i * 0.07}s both">
+                <span class="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 dark:bg-sky-400/10 flex items-center justify-center mt-0.5">
+                  <span class="text-primary dark:text-sky-400 text-xs font-bold">${i + 1}</span>
+                </span>
+                <div>
+                  <h4 class="font-medium text-on-surface dark:text-white text-[15px] mb-1">${s.name}</h4>
+                  <p class="text-sm text-on-surface-variant dark:text-slate-400 leading-relaxed">${s.desc}</p>
+                </div>
+              </li>
+            `).join('')}
+          </ul>
+        `;
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+
+        requestAnimationFrame(() => {
+          backdrop.classList.remove('opacity-0');
+          backdrop.classList.add('opacity-100');
+          panel.classList.remove('scale-95', 'opacity-0');
+          panel.classList.add('scale-100', 'opacity-100');
+        });
+      }
+
+      function closeModal() {
+        backdrop.classList.remove('opacity-100');
+        backdrop.classList.add('opacity-0');
+        panel.classList.remove('scale-100', 'opacity-100');
+        panel.classList.add('scale-95', 'opacity-0');
+        document.body.style.overflow = '';
+
+        setTimeout(() => {
+          modal.classList.remove('flex');
+          modal.classList.add('hidden');
+        }, 300);
+      }
+
+      // Click handlers for cards
+      document.getElementById('research-grid').addEventListener('click', (e) => {
+        const card = e.target.closest('[data-research]');
+        if (card) openModal(parseInt(card.dataset.research));
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+      });
+    })();
+    </script>
+
+    <style>
+      @keyframes subtopicFadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      #research-modal-panel::-webkit-scrollbar { width: 6px; }
+      #research-modal-panel::-webkit-scrollbar-track { background: transparent; }
+      #research-modal-panel::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+      .dark #research-modal-panel::-webkit-scrollbar-thumb { background: #475569; }
+    </style>
 
     <!-- Experience Timeline -->
     <section class="mb-section-gap">

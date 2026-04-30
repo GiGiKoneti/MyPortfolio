@@ -104,11 +104,10 @@ export function renderNav(activeId = "home") {
     }
   };
 
-  // Initialize from local storage or system preference
+  // Initialize from local storage, defaulting to light mode
   const savedTheme = localStorage.getItem("theme");
-  const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   
-  if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+  if (savedTheme === "dark") {
     htmlElement.classList.add("dark");
     updateIcons(true);
   } else {

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Probabilistic Forecasting in Practice - GiGi Koneti</title>
+  <meta name="description" content="Moving beyond point estimates with Bayesian neural networks for demand forecasting and uncertainty quantification." />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body data-page="blog" class="antialiased min-h-screen flex flex-col">
+  <div id="site-nav"></div>
+  <main class="flex-grow max-w-[1100px] mx-auto px-[5vw] w-full py-section-gap">
+    <div class="mb-12">
+      <a class="inline-flex items-center gap-2 font-label-sm text-label-sm text-tertiary hover:text-primary transition-colors" href="/blog.html">
+        <span class="material-symbols-outlined" style="font-size:16px">arrow_back</span> Back to Blog
+      </a>
+    </div>
+
+    <header class="mb-16 max-w-[800px] mx-auto text-center">
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <time class="font-label-sm text-label-sm text-tertiary dark:text-slate-500 uppercase tracking-widest" datetime="2024-03-15">March 15, 2024</time>
+        <span class="w-1 h-1 rounded-full bg-outline-variant dark:bg-slate-700"></span>
+        <div class="flex gap-2">
+          <span class="font-label-sm text-label-sm text-primary dark:text-sky-400 uppercase tracking-widest">Machine Learning</span>
+          <span class="font-label-sm text-label-sm text-primary dark:text-sky-400 uppercase tracking-widest">Bayesian</span>
+        </div>
+      </div>
+      <h1 class="font-headline-xl text-headline-xl text-on-surface dark:text-white mb-8">Probabilistic Forecasting in Practice: Beyond Point Estimates</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-slate-400 max-w-[600px] mx-auto">Why single-number predictions fail in the real world, and how Bayesian approaches give us the uncertainty we need for better decisions.</p>
+    </header>
+
+    <div class="w-full h-[400px] bg-surface-container dark:bg-slate-800 rounded-lg mb-section-gap overflow-hidden relative">
+      <img alt="Probabilistic forecasting data visualization" class="w-full h-full object-cover opacity-80 mix-blend-multiply dark:mix-blend-normal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJYEcFK1SDmb92FdivyPsDiPVyNjxHvRN1bNxSbsXCQdUgy-zDTQelCgPETegspy058Ve-Ngklz7o6IQgO5zyc7OftQFa5N7C_2zI6grLB--EQ2gCfIX4mpRelWehRqkkCWKJavDqFMjgdAN16TUXCFa5_uPJHJbZRvXNaNZ_qyql7WPKM8R0jZli2QRSD01jl2wTz4AOAOrVN00RvZSZ23DIP4TM-GGhVqhxzBe2DMUQwFydCa8FzuVYKMejzR1GgIqAlae_0jZg" />
+    </div>
+
+    <article class="max-w-[720px] mx-auto bg-surface-container-lowest dark:bg-slate-900 p-8 md:p-12 rounded-xl border border-outline-variant/30 dark:border-slate-800 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+      <div class="prose-article dark:prose-invert">
+        <p class="dark:text-slate-300">In production machine learning, a single prediction is almost never sufficient. When a model says "demand will be 1,247 units," the natural follow-up is: <em>how confident are you?</em> Is it 1,247 ± 10, or 1,247 ± 500? The answer fundamentally changes how a business should respond.</p>
+        <p class="dark:text-slate-300">This is the central argument for probabilistic forecasting — replacing point estimates with full predictive distributions that communicate the inherent uncertainty in any prediction.</p>
+
+        <h2 class="dark:text-white">The Failure of Point Estimates</h2>
+        <p class="dark:text-slate-300">Classical forecasting models — ARIMA, exponential smoothing, even standard neural networks — produce a single number. This creates a dangerous illusion of precision. Consider two scenarios in supply chain management:</p>
+        <ul class="dark:text-slate-300">
+          <li><strong>Scenario A:</strong> Predicted demand of 1,000 with a tight 95% interval of [950, 1,050]. Safe to order 1,050 units.</li>
+          <li><strong>Scenario B:</strong> Same prediction of 1,000 but with a wide interval of [200, 1,800]. Ordering 1,050 could mean catastrophic stockout or massive overstock.</li>
+        </ul>
+        <p class="dark:text-slate-300">Without uncertainty quantification, both scenarios produce the same action. With it, the decision-maker has the information needed to adjust inventory buffers, trigger manual review, or hedge across suppliers.</p>
+
+        <h2 class="dark:text-white">Bayesian Neural Networks: Weights as Distributions</h2>
+        <p class="dark:text-slate-300">The Bayesian approach replaces fixed neural network weights with probability distributions over weights. Instead of learning a single optimal weight matrix W*, we learn the posterior distribution P(W|Data). At inference time, we sample multiple sets of weights and aggregate predictions — naturally producing a predictive distribution.</p>
+
+        <blockquote class="dark:border-sky-500">
+          <p class="dark:text-slate-200 italic">"A Bayesian neural network doesn't tell you what will happen. It tells you what could happen, and how likely each outcome is."</p>
+        </blockquote>
+
+        <div class="bg-surface-container dark:bg-slate-800 rounded-lg p-6 my-6 border border-outline-variant/50 dark:border-slate-700">
+          <div class="font-label-sm text-label-sm text-tertiary dark:text-slate-500 mb-3 uppercase">Implementation: MC Dropout as Approximate Bayesian Inference</div>
+          <pre class="dark:bg-slate-950"><code class="dark:text-slate-300">import torch
+import torch.nn as nn
+
+class BayesianForecaster(nn.Module):
+    def __init__(self, input_dim, hidden=128, dropout=0.1):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(input_dim, hidden), nn.ReLU(),
+            nn.Dropout(dropout),  # Keep active at inference
+            nn.Linear(hidden, hidden), nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden, 1)
+        )
+    
+    def predict_distribution(self, x, n_samples=100):
+        self.train()  # Keep dropout active
+        preds = torch.stack([self.net(x) for _ in range(n_samples)])
+        return preds.mean(dim=0), preds.std(dim=0)</code></pre>
+        </div>
+
+        <h2 class="dark:text-white">Calibration: The Often-Ignored Metric</h2>
+        <p class="dark:text-slate-300">A probabilistic model is only useful if it's <em>calibrated</em> — meaning its predicted intervals actually contain the true value at the stated frequency. A 90% prediction interval should contain the ground truth 90% of the time, not 60% or 99%.</p>
+        <p class="dark:text-slate-300">In our work on Neural-LAM weather forecasting, we found that calibration requires careful attention to:</p>
+        <ul class="dark:text-slate-300">
+          <li>Training loss functions that penalize both accuracy and calibration (e.g., CRPS — Continuous Ranked Probability Score)</li>
+          <li>Post-hoc calibration via isotonic regression or temperature scaling on held-out validation data</li>
+          <li>Ensemble diversity — members that make correlated errors produce artificially narrow intervals</li>
+        </ul>
+
+        <h2 class="dark:text-white">Practical Lessons from Atmospheric Science</h2>
+        <p class="dark:text-slate-300">Weather forecasting is the gold standard for probabilistic prediction. Meteorologists have used ensemble methods for decades, and their evaluation frameworks are remarkably mature. Key takeaways for ML practitioners:</p>
+        <ul class="dark:text-slate-300">
+          <li><strong>Spread-skill relationship:</strong> Ensemble spread should correlate with actual forecast error. When the ensemble disagrees, it should be because the situation is genuinely uncertain.</li>
+          <li><strong>Rank histograms:</strong> If the true observation is equally likely to fall in any rank position among ensemble members, the ensemble is well-calibrated.</li>
+          <li><strong>Energy Score:</strong> A multivariate generalization of CRPS that accounts for spatial correlations in predicted fields.</li>
+        </ul>
+
+        <h2 class="dark:text-white">Conclusion</h2>
+        <p class="dark:text-slate-300">Point estimates are comfortable but dangerous. In any domain where decisions carry real consequences — healthcare, finance, supply chain, weather — probabilistic forecasting isn't a luxury; it's a necessity. The tools exist today, from simple MC Dropout to sophisticated normalizing flows. The harder challenge is cultural: convincing stakeholders to think in distributions rather than numbers.</p>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-outline-variant/30 dark:border-slate-800 flex justify-between items-center">
+        <div class="font-label-sm text-label-sm text-tertiary dark:text-slate-500">Written by GiGi Koneti</div>
+        <div class="flex gap-4">
+          <button class="text-tertiary dark:text-slate-500 hover:text-primary dark:hover:text-sky-400 transition-colors" title="Share"><span class="material-symbols-outlined">share</span></button>
+          <button class="text-tertiary dark:text-slate-500 hover:text-primary dark:hover:text-sky-400 transition-colors" title="Bookmark"><span class="material-symbols-outlined">bookmark_border</span></button>
+        </div>
+      </div>
+
+      <!-- Discussion -->
+      <section class="mt-20 pt-12 border-t border-outline-variant/30 dark:border-slate-800">
+        <h3 class="font-headline-lg text-headline-lg text-on-surface dark:text-white mb-8">Discussion</h3>
+        <form class="mb-12 flex flex-col gap-4">
+          <input class="bg-surface-container-low dark:bg-slate-800 border border-outline-variant/50 dark:border-slate-700 rounded p-3 text-body-md font-body-md dark:text-white focus:outline-none focus:border-primary dark:focus:border-sky-400 transition-colors" placeholder="Name" type="text" />
+          <textarea class="bg-surface-container-low dark:bg-slate-800 border border-outline-variant/50 dark:border-slate-700 rounded p-3 text-body-md font-body-md dark:text-white focus:outline-none focus:border-primary dark:focus:border-sky-400 transition-colors resize-none" placeholder="Share your thoughts..." rows="4"></textarea>
+          <div class="flex justify-end">
+            <button class="px-6 py-2 bg-primary dark:bg-sky-600 text-on-primary dark:text-white font-label-sm text-label-sm uppercase tracking-widest rounded hover:bg-primary-container dark:hover:bg-sky-500 transition-colors" type="button">Post Comment</button>
+          </div>
+        </form>
+        <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-3">
+            <div class="flex justify-between items-center">
+              <div class="font-label-sm text-label-sm text-on-surface dark:text-slate-200 font-semibold">Dr. Kavitha Nair</div>
+              <time class="font-label-sm text-label-sm text-tertiary dark:text-slate-500 uppercase">1 week ago</time>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400">The calibration section is spot-on. In our meteorological work we've found CRPS to be far more informative than RMSE. Glad to see someone bridging the weather-ML divide.</p>
+            <button class="font-label-sm text-label-sm text-primary dark:text-sky-400 uppercase hover:underline self-start">Reply</button>
+            <div class="ml-8 mt-4 pl-8 border-l-2 border-outline-variant/20 dark:border-slate-800 flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <div class="font-label-sm text-label-sm text-on-surface dark:text-slate-200 font-semibold">Tomás Rivera</div>
+                <time class="font-label-sm text-label-sm text-tertiary dark:text-slate-500 uppercase">5 days ago</time>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400">Agreed. We switched from MSE to CRPS at our supply chain startup and immediately caught issues with our uncertainty intervals being wildly overconfident.</p>
+              <button class="font-label-sm text-label-sm text-primary dark:text-sky-400 uppercase hover:underline self-start">Reply</button>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="flex justify-between items-center">
+              <div class="font-label-sm text-label-sm text-on-surface dark:text-slate-200 font-semibold">Rashid Osman</div>
+              <time class="font-label-sm text-label-sm text-tertiary dark:text-slate-500 uppercase">4 days ago</time>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant dark:text-slate-400">MC Dropout as approximate Bayesian inference is a great starting point, but have you experimented with deep ensembles? They tend to produce better-calibrated intervals with less computational overhead per member.</p>
+            <button class="font-label-sm text-label-sm text-primary dark:text-sky-400 uppercase hover:underline self-start">Reply</button>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>
